@@ -109,7 +109,7 @@ body {
 /* Right side */
 
 .right-side {
-  background-image: url(/vr-woman.png);
+  background-image: url(./public/vr-woman.png);
   position: relative;
   opacity: 0;
 }
