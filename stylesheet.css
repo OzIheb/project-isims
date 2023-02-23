@@ -110,6 +110,7 @@ body {
 
 .right-side {
   background-image: url(./vr-woman.png);
+  background-repeat: no-repeat;
   position: relative;
   opacity: 0;
 }
