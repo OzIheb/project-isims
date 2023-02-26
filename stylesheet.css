@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Libre+Caslon+Text&display=swap");
 :root {
-  --distance-1: -50px;
-  --distance-2: -100px;
-  --distance-3: -150px;
+  --distance-1: -0.78em;
+  --distance-2: calc(var(--distance-1) * 2);
+  --distance-3: calc(var(--distance-1) * 3);
 }
 
 body {
@@ -30,11 +30,11 @@ body {
 .slogan-2 {
   font-family: "Lato", sans-serif;
   position: absolute;
-  top: 50vh;
+  top: 45vh;
   left: 4vw;
-  font-size: 56px;
+  font-size: max(6vw, 52px);
   opacity: 0;
-  letter-spacing: -4px;
+  letter-spacing: -0.11em;
 }
 .name {
   animation-name: text-up;
@@ -50,7 +50,7 @@ body {
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0, 0.9, 0.06, 0.97);
-  padding-left: 40px;
+  padding-left: 0.73em;
 }
 
 .slogan-1 {
@@ -70,8 +70,8 @@ body {
 }
 
 .statement {
-  width: 370px;
-  height: 200px;
+  width: max(50%, 225px);
+  height: 10%;
   font-family: "Cinzel Decorative";
   text-transform: capitalize;
   font-size: 16px;
@@ -86,13 +86,13 @@ body {
 }
 
 .statement-text {
-  font-size: 24px;
+  font-size: max(1.8vw, 18.4px);
 }
 
 .about-us {
   font-family: "Lato";
   font-weight: 600;
-  font-size: 14px;
+  font-size: max(1.3vw, 12.8px);
   text-transform: uppercase;
 }
 
@@ -102,7 +102,7 @@ body {
   left: 27vw;
   font-style: "Lato";
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: max(1vw, 10.42px);
   opacity: 0;
 }
 
@@ -111,6 +111,9 @@ body {
 .right-side {
   background-image: url(./vr-woman.png);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left center;
+  background-attachment: local;
   position: relative;
   opacity: 0;
 }
@@ -138,22 +141,30 @@ body {
     #f64f59 100%,
     #f64f59 100%
   );
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.9);
+  border: 1px solid white;
   border-radius: 5px;
   left: 15vw;
   top: 85vh;
   color: whitesmoke;
-  font-weight: 600;
+  font-family: "Lato";
 }
 
 .statement,
-.right-side,
 .isims-text {
   animation-name: content-appear;
   animation-duration: 0.5s;
   animation-delay: 3s;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.31, 0, 0.47, 1.31);
+  animation-timing-function: cubic-bezier(0, 0.63, 0.06, 0.94);
+}
+
+.right-side {
+  animation-name: content-appear-image;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.06, 0.94);
 }
 
 /* Animation that moves the text up and makes it visible */
@@ -231,5 +242,16 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes content-appear-image {
+  0% {
+    opacity: 0;
+    box-shadow: inset -1px -16px 400px 100px lightgrey;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: inset 0px 0px 0px 0px lightgrey;
   }
 }
